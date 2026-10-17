@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFT</title>
+    <link rel="stylesheet" href="sft.css">
+    <script src="storage.js"></script>
+    <script src="state.js"></script>
+    <script src="validate.js"></script>
+    <script src="search.js"></script>
+    <script src="ui.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#main" class="skip-link"> skip to main content</a>
+        <h1>Student Finance Tracker</h1>
+        <nav aria-label="Main navigation">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#add">Add</a>
+            <a href="#records">Records</a>
+            <a href="#settings">Settings</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+    <main id="main">
+        <section id="dashboard" class="active">
+            <h2>Dashboard</h2>
+            <div class="cards">
+                <div class="card">Records: <strong id="records-count">0</strong></div>
+                <div class="card">Total: <strong id="total">0.00</strong></div>
+                <div class="card">Top category: <strong id="top-category">None</strong></div>
+            </div>
+            <p id ="cap-message" aria-live="polite"> Set a spending cap.</p>
+            <p id="weekly-trend">Last 7 days: 0 transactions</p>
+            <div id="chart" aria-label="Spending summary"></div>
+        </section>
+        <section id="add">
+            <h2>Add transaction</h2>
+            <form id="transaction-form" novalidate>
+                <label for="dsc">Description</label>
+                <input type="text" id="dsc" required aria-describedby="dsc-error">
+                <div id="dsc-error" class="error-msg" aria-live="polite"></div>
+
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" min="0" step="0.01" required aria-describedby="amount-error">
+                <div id="amount-error" class="error-msg" aria-live="polite"></div>
+
+                <label for="category">Category</label>
+                <select id="category" aria-describedby="category-error">
+                    <option>Food</option>
+                    <option>Books</option>
+                    <option>Transport</option>
+                    <option>Entertainment</option>
+                    <option>Fees</option>
+                    <option>Other</option>
+                </select>
+                <div id="category-error" class="error-msg" aria-live="polite"></div>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" required aria-describedby="date-error">
+                <div id="date-error" class="error-msg" aria-live="polite"></div>
+                <button type="submit">Save transaction</button>
+                <p id="form-message" role="status"></p>
+
+            </form>
+        </section>
+        <section id="records">
+            <h2>Transactions</h2>
+            <label for="search">Regex search</label>
+            <input id="search" placeholder="Try coffee or \.\d{2}\b">
+            <p id="search-error" role="status" class="error-msg"></p>
+            <label for="ignore-case">Ignore case</label>
+            <input type="checkbox" id="ignore-case" checked>
+            <label for="sort-by">Sort by</label>
+            <select id="sort-by">
+                <option value="date">Date</option>
+                <option value="description">Description A-Z</option>
+                <option value="amount">Amount low-high</option>
+            </select>
+            <div class="table-wrap">
+                <table>
+                    <caption>Student Financial Records and Expense Table</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="records-body"></tbody>
+                </table>
+            </div>
+        </section>
+        <section id="settings">
+            <h2>Settings</h2>
+            <label for="cap">Spending cap</label>
+            <input type="number" id="cap" min="0" value="300" required>
+            <label for="currency">Currency</label>
+            <select id="currency">
+                <option value="USD">USD</option>
+                <option value="RWF">RWF</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <label for="rate-rwf">USD to rwf rate</label>
+            <input type="number" id="rate-rwf" value="1472" min="0.01" step="0.01">
+            <label for="rate-eur">USD to EUR rate</label>
+            <input type="number" id="rate-eur" value="0.92" min="0.01" step="0.01" >
+            <button id="export-json" type="button">EXPORT JSON</button>
+            <label for="import-json">import json</label>
+            <input type="file" id="import-json" accept=".json,application/json">
+            <p id="settings-message" role="status"></p>            
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This app helps students track finances as they are studying</p>
+            <p>Github: <a href="https://github.com/humwamikaz-ops">My GitHub page</a></p>
+            <p>Email: <a href="mailto:h.umwamikaz@alustudent.com">Contact me</a></p>
+        </section>
+
+    </main>
+    <footer>
+        <p>Student Finance Tracker</p>
+    </footer>
+    
+</body>
+</html>
