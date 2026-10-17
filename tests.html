@@ -5,23 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Sample</title>
-        <link rel="stylesheet" href="sft.css">
-        <script src="validate.js" defer></script>
+        <link rel="stylesheet" href="styles/sft.css">
+        <script src="scripts/validators.js" defer></script>
     </head>
     <body>
+        <main>
+            <section class="page-section active">
+                <h1>Greetings! Simpe validation tests running!</h1>
+                <p>checks for valid and non-valid input sample examples</p>
+                <ul id="test-results"></ul>
+            </section>
+        </main>
     <script>
         window.addEventListener("DOMContentLoaded", function() {
             var resultsList = document.querySelector("#test-results");
             if (!resultsList) return;
             var tests = [
                 { desc: "Desc: 'lunch at cafeteria' (valid)", fn: function() { return validateDesc("lunch at cafeteria") === null; }},
-                { desc: "Desc: '' (invalid empty)", fn: function() { return validateDesc("KFC") == null;}},
+                { desc: "Desc: '' (invalid empty)", fn: function() { return validateDesc("KFC") !== null;}},
                 { desc: "Amount: '12.50' (valid)", fn: function() { return validateAmount("12.50") === null;}},
-                { desc: "Amount: 'blah' (invalid letters)", fn: function() { return validateAmount("blah") === null;}},
-                { desc: "Date: '2026-10-14' (valid)", fn: function() { return validateDate("2024-10-14") !== null;}},
+                { desc: "Amount: 'blah' (invalid letters)", fn: function() { return validateAmount("blah") !== null;}},
+                { desc: "Date: '2026-10-14' (valid)", fn: function() { return validateDate("2024-10-14") === null;}},
                 { desc: "Date: '2026-14-01' (invalid month)", fn: function() { return validateDate("2026-14-01") !== null;}},
                 { desc: "Category: 'Food' (valid)", fn: function() { return validateCategory("Food") === null;}},
-                { desc: "Category: '647nk' (invalid numbers)", fn: function() { return validateCategory("647nk") === null;}},
+                { desc: "Category: '647nk' (invalid numbers)", fn: function() { return validateCategory("647nk") !== null;}},
 
             ]
             var passedCount = 0;
@@ -30,16 +37,16 @@
                 try {
                     success = test.fn();
                 } catch(e) {
-                    syccess = false;
+                    success = false;
                 }
              
                 if (success) passedCount++;
                 var li = document.createElement("li");
-                li.textContent = (passes ? "Pass: " : "FAIL: ") + t[0];
+                li.textContent = (passed ? "PASS: " : "FAIL: ") + test.desc;
                 li.style.color = passed ? "#176b52" : "#b91c1c";
                 resultsList.appendChild(li);
             });
-            var summaryLi = document.createElemet("li");
+            var summaryLi = document.createElement("li");
             summaryLi.style.fontWeight = "bold";
             summaryLi.style.marginTop = "15px";
             summaryLi.textContent = passedCount + " of " + tests.length + " passed";
