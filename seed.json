@@ -1,0 +1,93 @@
+[
+    {
+        "id": "rec_0001",
+        "description": "lunch at cafeteria",
+        "amount": 12.5,
+        "category": "Food",
+        "date": "2026-10-12",
+        "createdAt": "2026-10-12T09:15:00.000Z",
+        "updatedAt": "2026-10-14T09:15:00.000Z"
+    },
+    {
+     "id": "rec_0002",
+     "description": "intro to python textbook",
+     "amount": 15,
+     "category": "Books",
+     "date":"2026-10-12",
+     "createdAt": "2026-10-12T14:02:00.000Z",
+     "updatedAt": "2026-10-12T14:02:00.000Z"
+    },
+    {
+        "id": "rec_0003",
+        "description": "meze_fress",
+        "amount": 3,
+        "category": "Food",
+        "date": "2026-10-14",
+        "createdAt": "2026-10-14T09:15:00.000Z",
+        "updatedAt": "2026-10-14T09:16:00.000Z"
+    },
+    {
+        "id": "rec_0004",
+        "description": "bus",
+        "amount": 12,
+        "category": "Transport",
+        "date": "2026-10-12",
+        "createdAt": "2026-10-12T09:16:00.000Z",
+        "updatedAt": "2026-10-14T09:14:00.000Z"
+    },
+    {
+        "id": "rec_0005",
+        "description": "primevideo",
+        "amount": 15,
+        "category": "Entertainment",
+        "date": "2026-09-29",
+        "createdAt": "2026-09-29T14:02:00.000Z",
+        "updatedAt": "2026-10-14T09:14:00.000Z"
+    },
+    {
+        "id": "rec_0006",
+        "description": "intro to linux",
+        "amount": 5,
+        "category": "Books",
+        "date": "2026-10-01",
+        "createdAt": "2026-10-01T00:12:00.000Z",
+        "updatedAt": "2026-10-12T00:09:00.000Z"
+    },
+    {
+        "id": "rec_0007",
+        "description": "netflix",
+        "amount": 20,
+        "category": "Entertainment",
+        "date": "2026-09-30",
+        "createdAt": "2026-09-30T00:12:00.000Z",
+        "updatedAt": "2026-10-14T09:14:00.000Z"
+    },
+    {
+        "id": "rec_0008",
+        "description": "tuition",
+        "amount": 1000,
+        "category": "Fees",
+        "date": "2026-10-01",
+        "createdAt": "2026-10-01T09:15:00.000Z",
+        "updatedAt": "2026-10-14T09:14:00.000Z"
+    },
+    {
+        "id": "rec_0009",
+        "description": "moto",
+        "amount": 3,
+        "category": "Transport",
+        "date": "2026-10-12",
+        "createdAt": "2026-10-12T09:15:00.000Z",
+        "updatedAt": "2026-10-14T09:14:00.000Z"
+    },
+    {
+        "id": "rec_0010",
+        "description": "KFC",
+        "amount": 11,
+        "category": "Food",
+        "date": "2026-10-03",
+        "createdAt": "2026-10-03T14:02:00.000Z",
+        "updatedAt": "2026-10-12T14:02:00.000Z"
+    }
+]
+   
