@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Sample</title>
+        <title>Validator tests</title>
         <link rel="stylesheet" href="styles/sft.css">
         <script src="scripts/validators.js" defer></script>
     </head>
     <body>
         <main>
             <section class="page-section active">
-                <h1>Greetings! Simpe validation tests running!</h1>
+                <h1>Greetings! Simple validation tests running!</h1>
                 <p>checks for valid and non-valid input sample examples</p>
                 <ul id="test-results"></ul>
             </section>
@@ -22,10 +22,10 @@
             if (!resultsList) return;
             var tests = [
                 { desc: "Desc: 'lunch at cafeteria' (valid)", fn: function() { return validateDesc("lunch at cafeteria") === null; }},
-                { desc: "Desc: '' (invalid empty)", fn: function() { return validateDesc("KFC") !== null;}},
+                { desc: "Desc: '' (invalid empty)", fn: function() { return validateDesc("") !== null;}},
                 { desc: "Amount: '12.50' (valid)", fn: function() { return validateAmount("12.50") === null;}},
                 { desc: "Amount: 'blah' (invalid letters)", fn: function() { return validateAmount("blah") !== null;}},
-                { desc: "Date: '2026-10-14' (valid)", fn: function() { return validateDate("2024-10-14") === null;}},
+                { desc: "Date: '2026-10-14' (valid)", fn: function() { return validateDate("2026-10-14") === null;}},
                 { desc: "Date: '2026-14-01' (invalid month)", fn: function() { return validateDate("2026-14-01") !== null;}},
                 { desc: "Category: 'Food' (valid)", fn: function() { return validateCategory("Food") === null;}},
                 { desc: "Category: '647nk' (invalid numbers)", fn: function() { return validateCategory("647nk") !== null;}},
@@ -42,8 +42,8 @@
              
                 if (success) passedCount++;
                 var li = document.createElement("li");
-                li.textContent = (passed ? "PASS: " : "FAIL: ") + test.desc;
-                li.style.color = passed ? "#176b52" : "#b91c1c";
+                li.textContent = (success ? "PASS: " : "FAIL: ") + test.desc;
+                li.style.color = success ? "#176b52" : "#b91c1c";
                 resultsList.appendChild(li);
             });
             var summaryLi = document.createElement("li");
