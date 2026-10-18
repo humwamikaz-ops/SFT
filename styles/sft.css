@@ -16,6 +16,7 @@ body {
     position: absolute;
     top: 160px;
     left: 0;
+    text-decoration: none;
     background: #183b56;
     color: white;
     padding: 8px;
