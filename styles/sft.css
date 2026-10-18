@@ -14,7 +14,7 @@ body {
 }
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: 160px;
     left: 0;
     background: #183b56;
     color: white;
