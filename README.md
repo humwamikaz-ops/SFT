@@ -3,7 +3,7 @@ Student Finance Tracker
 A responsive, accessible expense tracker for students, built with plain HTML, CSS, and JavaScript (no frameworks).
 
 Live site (GitHub Pages): https://humwamikaz-ops.github.io/SFT/
-Demo video (unlisted): https://www.loom.com/share/68d687fb466743779807217bfd07ca2e
+Demo video (unlisted): https://www.loom.com/share/a92fa509adeb4a39bd294734158e2a17
 Chosen theme: Student Finance Tracker
 Author: Umwamikazi Honorata (GitHub: humwamikaz-ops, email: h.umwamikaz@alustudent.com)
 Features
